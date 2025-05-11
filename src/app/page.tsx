@@ -1,102 +1,125 @@
-import Image from "next/image";
+import Link from "next/link";
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { ArrowRight, Brain, MessageSquare, Trophy } from "lucide-react";
+import { Navigation } from "@/components/Navigation";
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 to-slate-800">
+      <Navigation />
+      
+      {/* Hero Section */}
+      <div className="container mx-auto px-4 pt-32 pb-16">
+        <div className="text-center space-y-6">
+          <h1 className="text-4xl md:text-6xl font-bold text-white">
+            Build Your Trading Intuition
+          </h1>
+          <p className="text-xl text-slate-300 max-w-2xl mx-auto">
+            Master market making and trading strategies through interactive games with AI-powered interview feedback
+          </p>
+          <div className="flex justify-center gap-4">
+            <Button asChild size="lg" className="bg-blue-600 hover:bg-blue-700">
+              <Link href="#games">
+                Start Learning <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+      </div>
+
+      {/* Features Section */}
+      <div className="container mx-auto px-4 py-16">
+        <div className="grid md:grid-cols-3 gap-8">
+          <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
+            <Brain className="h-12 w-12 text-blue-500 mb-4" />
+            <h3 className="text-xl font-semibold text-white mb-2">AI Mentor</h3>
+            <p className="text-slate-300">
+              Get personalized guidance and feedback as you learn, helping you understand the reasoning behind trading decisions
+            </p>
+          </div>
+          <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
+            <Trophy className="h-12 w-12 text-blue-500 mb-4" />
+            <h3 className="text-xl font-semibold text-white mb-2">Learn by Doing</h3>
+            <p className="text-slate-300">
+              Develop your trading intuition through hands-on experience in a risk-free environment
+            </p>
+          </div>
+          <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
+            <MessageSquare className="h-12 w-12 text-blue-500 mb-4" />
+            <h3 className="text-xl font-semibold text-white mb-2">Real-World Skills</h3>
+            <p className="text-slate-300">
+              Master fundamental concepts like market making, risk management, and decision-making under uncertainty
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Games Section */}
+      <div id="games" className="container mx-auto px-4 py-16">
+        <h2 className="text-3xl font-bold text-white text-center mb-12">Learning Modules</h2>
+        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <Card className="bg-slate-800/50 backdrop-blur-sm border-slate-700">
+            <CardHeader>
+              <CardTitle className="text-2xl text-white">Yale Stock Trading Game</CardTitle>
+              <CardDescription className="text-slate-400">
+                A beginner-friendly introduction to market making
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-4">
+                <p className="text-slate-300">
+                  Start your journey with this classic game that teaches you to:
+                </p>
+                <ul className="list-disc pl-5 text-slate-300 space-y-2">
+                  <li>Understand market dynamics and price discovery</li>
+                  <li>Make decisions with incomplete information</li>
+                  <li>Balance risk and reward in trading</li>
+                  <li>Think like a market maker</li>
+                </ul>
+                <Button asChild className="w-full bg-blue-600 hover:bg-blue-700">
+                  <Link href="/games/yale-stock-game">
+                    Start Learning <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card className="bg-slate-800/50 backdrop-blur-sm border-slate-700">
+            <CardHeader>
+              <CardTitle className="text-2xl text-white">Coming Soon</CardTitle>
+              <CardDescription className="text-slate-400">
+                More learning modules in development
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-4">
+                <p className="text-slate-300">
+                  We're building more modules to help you develop your trading intuition:
+                </p>
+                <ul className="list-disc pl-5 text-slate-300 space-y-2">
+                  <li>Options trading fundamentals</li>
+                  <li>Fixed income concepts</li>
+                  <li>Statistical thinking in markets</li>
+                  <li>And more...</li>
+                </ul>
+                <Button disabled className="w-full bg-slate-700 text-slate-400">
+                  Coming Soon
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </div>
+
+      {/* Footer */}
+      <footer className="border-t border-slate-700 mt-16">
+        <div className="container mx-auto px-4 py-8">
+          <p className="text-center text-slate-400">
+            © 2024 Membrane. All rights reserved.
+          </p>
+        </div>
       </footer>
     </div>
   );
