@@ -19,6 +19,9 @@ export const metadata: Metadata = {
     title: "Membrane | Build Your Trading Intuition",
     description: "Master market making and trading strategies through interactive games with AI-powered feedback.",
   },
+  icons: {
+    icon: '/fav.png',
+  },
 };
 
 export default function RootLayout({
